@@ -29,9 +29,12 @@ Inputs:
 - Grid of synthetic spectra → 'training_input/spectra_example.csv'
 - Labels corresponding to synthetic spectra → 'training_input/labels_example.csv'
 Outputs:
-- Trained model → `models/nosnr_<dataset_name>_test.keras`
-- Training loss → `loss/nosnr.csv`
-- Scaling parameters → `scaling/minmax_<dataset_name>.csv`
+- Trained model → `models/model_example.keras`
+- Training loss → `loss/loss.csv`
+- Scaling parameters → `scaling/minmax.csv`
+
+Note: 
+	Labels_example.csv and spectra_example.csv are only present as example files and should not be used for actual training of the model. They contain only 500 spectra leading estimations of weights and biases. 
 
 ### 2️⃣ Fitting a Single Star
 Using the trained model, LRPayne fits the observed spectrum of a single target star and compares it to literature parameters.
@@ -64,8 +67,8 @@ LRPayne/
 ├── environment.yml              # Clean reproducible environment
 │
 ├── training_input/
-│   ├── labels_<dataset>.csv
-│   └── spectra_<dataset>.csv
+│   ├── labels_example.csv       # Example file with stellar labels
+│   └── spectra_example.csv      # Example file with flux values
 │
 ├── models/                      # Trained model files (.keras)
 ├── loss/                        # Training loss logs
@@ -119,8 +122,8 @@ All dependencies are managed automatically via `environment.yml`.
 
 If you use **LRPayne** in your research, please cite:
 
-> *Author Name(s)*, “LRPayne: Neural Network Fitting of Stellar Spectra,” (2025),  
-> GitHub Repository: [https://github.com/<your-username>/LRPayne](https://github.com/<your-username>/LRPayne)
+> *Vernekar N. et al. (2025)*, “LRPayne: Neural Network Fitting of Stellar Spectra,” (2025),  
+> GitHub Repository: [https://github.com/nagarajvernekar30/lrPayne]
 
 ---
 
